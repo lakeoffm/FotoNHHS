@@ -42,7 +42,7 @@
 		6DF4491E1B26FC09004CAA28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6DF449211B26FC09004CAA28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DF449241B26FC09004CAA28 /* FotoNHHS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FotoNHHS.xcdatamodel; sourceTree = "<group>"; };
-		6DF449261B26FC0A004CAA28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Volumes/MS/Foto NHHS (Personlige Mapper)/Maxim/FotoNHHS App/FotoNHHS/FotoNHHS/Assets.xcassets"; sourceTree = "<absolute>"; };
+		6DF449261B26FC0A004CAA28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6DF449291B26FC0A004CAA28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DF4492B1B26FC0A004CAA28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DF449301B26FC0A004CAA28 /* FotoNHHSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FotoNHHSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
