@@ -6,8 +6,8 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="HelveticaNeue.ttc">
-            <string>HelveticaNeue</string>
+        <mutableArray key="Avenir.ttc">
+            <string>Avenir-Book</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -24,12 +24,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2015 Max Ozerov. All rights reserved. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
-                                <rect key="frame" x="20" y="560" width="560" height="20"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <rect key="frame" x="20" y="555" width="560" height="25"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FotoNHHS Logo" translatesAutoresizingMaskIntoConstraints="NO" id="8au-1L-D35">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Foto NHHS Logo" translatesAutoresizingMaskIntoConstraints="NO" id="8au-1L-D35">
                                 <rect key="frame" x="20" y="20" width="560" height="531"/>
                             </imageView>
                         </subviews>
@@ -51,6 +51,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FotoNHHS Logo" width="476" height="509"/>
+        <image name="Foto NHHS Logo" width="1460" height="1460"/>
     </resources>
 </document>
