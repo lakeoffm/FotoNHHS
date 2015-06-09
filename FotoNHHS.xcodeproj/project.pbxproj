@@ -36,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6D779A541B27166000F50A6F /* FotoNHHS logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FotoNHHS logo.png"; sourceTree = "<group>"; };
+		6D779A541B27166000F50A6F /* FotoNHHS logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "FotoNHHS logo.png"; path = "FotoNHHS/FotoNHHS logo.png"; sourceTree = SOURCE_ROOT; };
 		6DF449191B26FC09004CAA28 /* FotoNHHS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FotoNHHS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DF4491C1B26FC09004CAA28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6DF4491E1B26FC09004CAA28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
