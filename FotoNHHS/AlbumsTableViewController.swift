@@ -10,6 +10,11 @@ import UIKit
 
 class AlbumsTableViewController: UITableViewController {
 
+    var albumTitles = ["Bachelormiddagen", "Studentregatta", "Debatt om Formueskatt", "Bachelormiddagen", "Studentregatta", "Debatt om Formueskatt"]
+    var albumInfo = ["142 photos - Published 21.05.2015", "22 photos - Published 21.04.2015", "12 photos - Published 21.03.2015", "142 photos - Published 21.05.2015", "22 photos - Published 21.04.2015", "12 photos - Published 21.03.2015"]
+    var albumThumbnails = ["album1", "album2", "album3","album1", "album2", "album3"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +23,7 @@ class AlbumsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +35,27 @@ class AlbumsTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return albumTitles.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cellIdentifier = "Album"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! AlbumTableViewCell
 
         // Configure the cell...
+        cell.albumTitle.text = " " + albumTitles[indexPath.row]
+        cell.albumInfo.text = " " + albumInfo[indexPath.row]
+        cell.thumbnailImage.image = UIImage(named: albumThumbnails[indexPath.row])
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
