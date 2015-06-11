@@ -13,7 +13,7 @@ private let reuseIdentifier = "Photo"
 class PhotosCollectionViewController: UICollectionViewController {
 
     var photos = ["image08", "image09", "image01", "image02", "image03", "image04", "image05", "image06", "image07", "image02", "image03", "image04", "image08", "image09", "image05", "image07", "image01", "image02", "image03", "image04", "image05", "image06", "image08", "image09"]
-    
+    var urls = "https://farm8.staticflickr.com/7740/18354745346_38dc0f2e0c_b.jpg"
     
     @IBOutlet var photostreamCollectionView: UICollectionView!
     
@@ -32,6 +32,10 @@ class PhotosCollectionViewController: UICollectionViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func close (segue:UIStoryboardSegue){
+        
     }
     
     override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
@@ -59,8 +63,6 @@ class PhotosCollectionViewController: UICollectionViewController {
         sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
             let screenSize: CGRect = UIScreen.mainScreen().bounds
             let photoWidth = screenSize.width/4.5
-            print("Screen size: \(screenSize.width)")
-            print ("Photo size: \(photoWidth)")
             
             let size=CGSizeMake(photoWidth, photoWidth)
             return size
@@ -85,8 +87,15 @@ class PhotosCollectionViewController: UICollectionViewController {
     
         // Configure the cell
         cell.imageThumbnail.image = UIImage(named: photos[indexPath.row])
+        cell.imageURL = urls
         
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Photo"{
+            
+        }
     }
 
     // MARK: UICollectionViewDelegate

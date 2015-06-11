@@ -11,4 +11,6 @@ import UIKit
 class PhotoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageThumbnail: UIImageView!
+    
+    var imageURL:String = ""
 }
