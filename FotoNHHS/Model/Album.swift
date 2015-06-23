@@ -10,13 +10,14 @@ import Foundation
 
 class Album {
     
-    private let albumID:Int
+    private let albumID:String
     private let albumName:String
     private let numberOfPhotos:Int
-    private let dateCreated:NSDate //TO BE CHANGED TO NSDate
+    private let dateCreated:String
     private let coverPhoto:Photo
     
-    init(id:Int, name:String, photos:Int, dateCreated:NSDate, cover:Photo){
+    
+    init(id:String, name:String, photos:Int, dateCreated:String, cover:Photo){
         self.albumID = id
         self.albumName = name
         self.numberOfPhotos = photos
@@ -24,7 +25,7 @@ class Album {
         self.coverPhoto = cover
     }
     
-    func getAlbumId()->Int{
+    func getAlbumId()->String{
         return self.albumID
     }
     
@@ -36,8 +37,12 @@ class Album {
         return self.numberOfPhotos
     }
     
-    func getDateCreated()->NSDate{
+    func getDateCreated()->String{
         return self.dateCreated
+    }
+    
+    func getCoverPhoto()->Photo{
+        return self.coverPhoto
     }
     
 }

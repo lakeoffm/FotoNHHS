@@ -9,13 +9,13 @@
 import Foundation
 
 class Photo {
-    private let photoID: Int
+    private let photoID: String
     private let size: Sizes
     private let possibleSizes:[Sizes]
     private let imageData:NSData
     
     
-    init(id:Int, size:Sizes, possibleSizes:[Sizes], data:NSData){
+    init(id:String, size:Sizes, possibleSizes:[Sizes], data:NSData){
         self.photoID = id
         self.size = size
         self.possibleSizes = possibleSizes
@@ -35,6 +35,10 @@ class Photo {
         case Large1600=1600
         case Large2048=2048
         case Original
+    }
+    
+    func getImageData()->NSData{
+        return self.imageData
     }
     
 }
