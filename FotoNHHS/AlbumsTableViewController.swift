@@ -23,11 +23,14 @@ class AlbumsTableViewController: UITableViewController {
     // End of API Constants
     //
     
+    var isLoadingData:Bool = false
     
     var albums:[Album]=[] {
         didSet{
-            print ("The albums was set")
-            self.tableView.reloadData()
+            dispatch_async(dispatch_get_main_queue()) {
+                self.tableView.reloadData()
+                self.isLoadingData = false
+            }
         }
     }
     
@@ -49,7 +52,6 @@ class AlbumsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print ("Строк в массиве: \(albums.count)")
         return albums.count
     }
 
@@ -58,16 +60,9 @@ class AlbumsTableViewController: UITableViewController {
         let cellIdentifier = "Album"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! AlbumTableViewCell
 
-        // Configure the cell...
-//        cell.albumTitle.text = " " + albumTitles[indexPath.row]
-//        cell.albumInfo.text = " " + albumInfo[indexPath.row]
-//        cell.thumbnailImage.image = UIImage(named: albumThumbnails[indexPath.row])
-        
         let currentAlbum = albums[indexPath.row]
         cell.albumTitle.text = " " + currentAlbum.getAlbumName()
-        print ("Album: \(currentAlbum.getAlbumName())")
         cell.albumInfo.text = " " + "\(currentAlbum.getNumberOfPhotos()) photos - Published \(currentAlbum.getDateCreated())"
-        print ("Info: \(currentAlbum.getNumberOfPhotos())")
         cell.thumbnailImage.image = UIImage(data: currentAlbum.getCoverPhoto().getImageData())
         
         return cell
@@ -78,19 +73,26 @@ class AlbumsTableViewController: UITableViewController {
         //We choose a proper method from the Flickr API
         let METHOD_NAME = "flickr.photosets.getList"
         let EXTRAS = "url_m"
+        let currentPageNumber:Int=Int(albums.count/10)
         
         //Prepare arguments to call a method
         let methodArguments = [
             "method": METHOD_NAME,
             "api_key": API_KEY,
+            "page": "\(currentPageNumber + 1)",
+            "per_page": "10",
             "user_id": USER_ID,
             "primary_photo_extras": EXTRAS,
             "format": DATA_FORMAT,
             "nojsoncallback": NO_JSON_CALLBACK
         ]
         
-        getDataFromFlickr(methodArguments)
-        
+        if (!isLoadingData && albums.count%10==0){
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                self.getDataFromFlickr(methodArguments)
+            }
+        }
     }
     
     
@@ -113,7 +115,7 @@ class AlbumsTableViewController: UITableViewController {
             if let error = downloadError {
                 print("Could not complete the request \(error)")
             } else {
-                /* 5 - Success! Parse the data */
+                /* Parse the data */
                 var parsingError: NSError? = nil
                 let parsedResult: AnyObject!
                 do {
@@ -160,7 +162,6 @@ class AlbumsTableViewController: UITableViewController {
         }
         
         task!.resume()
-        
     }
     
     /* Helper function: Given a dictionary of parameters, convert to a string for a url */
@@ -183,6 +184,21 @@ class AlbumsTableViewController: UITableViewController {
         
         return (!urlVars.isEmpty ? "?" : "") + "&".join(urlVars)
     }
-
+    
+    
+    //
+    // Scroll to refresh
+    //
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        
+        if (maximumOffset>0 && currentOffset>0 && currentOffset - maximumOffset >= 100){
+            if (!isLoadingData){
+                getAlbums()
+                isLoadingData = true
+            }
+        }
+    }
 
 }
