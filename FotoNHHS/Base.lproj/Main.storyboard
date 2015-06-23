@@ -176,6 +176,9 @@
                                     <constraint firstItem="S5P-Jy-0uc" firstAttribute="centerY" secondItem="8d5-ec-A5u" secondAttribute="centerY" id="hAx-Ld-Yom"/>
                                     <constraint firstItem="S5P-Jy-0uc" firstAttribute="centerX" secondItem="8d5-ec-A5u" secondAttribute="centerX" id="wfJ-k7-978"/>
                                 </constraints>
+                                <variation key="heightClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                                </variation>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YaG-A4-szI">
                                 <rect key="frame" x="541" y="28" width="39" height="30"/>
