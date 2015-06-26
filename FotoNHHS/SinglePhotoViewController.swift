@@ -50,7 +50,6 @@ class SinglePhotoViewController: UIViewController, UIScrollViewDelegate {
     
     private func fetchImage(imageURL: NSURL?){
         if let url = imageURL{
-            print ("Image URL is: \(url)")
             
             let qos = Int(QOS_CLASS_USER_INITIATED.rawValue)
 
@@ -93,7 +92,6 @@ class SinglePhotoViewController: UIViewController, UIScrollViewDelegate {
     private var image:UIImage?{
         get{ return imageView.image}
         set{
-            print("New image value assigned")
             imageView.image = newValue
             imageView.sizeToFit()
             scrollView?.contentSize = imageView.frame.size

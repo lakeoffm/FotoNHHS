@@ -180,7 +180,6 @@ class PhotosCollectionViewController: UICollectionViewController {
                             let secretID = photo["secret"] as! String
                             
                             let photoURL = "https://farm\(farmID).staticflickr.com/\(serverID)/\(photoID)_\(secretID)_q.jpg"
-                            print ("Photo URL: \(photoURL)")
                             
                             if let photoData = NSData(contentsOfURL: NSURL(string: photoURL)!) {
                                 self.createPhoto(photoID, photoData: photoData)
