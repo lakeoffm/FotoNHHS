@@ -193,14 +193,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="8d5-ec-A5u" firstAttribute="width" secondItem="AUr-3i-EdK" secondAttribute="width" id="1Fc-sD-pao"/>
                             <constraint firstItem="VOI-33-CI9" firstAttribute="centerY" secondItem="AUr-3i-EdK" secondAttribute="centerY" id="3gk-EV-wCj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YaG-A4-szI" secondAttribute="trailing" id="L8X-82-Fcv"/>
-                            <constraint firstItem="8d5-ec-A5u" firstAttribute="centerY" secondItem="AUr-3i-EdK" secondAttribute="centerY" id="P8h-Sm-MkF"/>
-                            <constraint firstItem="8d5-ec-A5u" firstAttribute="centerX" secondItem="AUr-3i-EdK" secondAttribute="centerX" id="hhG-36-ffE"/>
-                            <constraint firstItem="8d5-ec-A5u" firstAttribute="width" secondItem="AUr-3i-EdK" secondAttribute="width" id="j20-Xj-7jY"/>
+                            <constraint firstItem="8d5-ec-A5u" firstAttribute="height" secondItem="AUr-3i-EdK" secondAttribute="height" id="OPO-Ib-iAJ"/>
+                            <constraint firstItem="8d5-ec-A5u" firstAttribute="centerY" secondItem="AUr-3i-EdK" secondAttribute="centerY" id="ZhY-cl-Ze1"/>
                             <constraint firstItem="YaG-A4-szI" firstAttribute="top" secondItem="Mx8-Vo-KdF" secondAttribute="bottom" constant="8" symbolic="YES" id="q9V-HO-75I"/>
+                            <constraint firstItem="8d5-ec-A5u" firstAttribute="centerX" secondItem="AUr-3i-EdK" secondAttribute="centerX" id="tFB-eE-lis"/>
                             <constraint firstItem="VOI-33-CI9" firstAttribute="centerX" secondItem="AUr-3i-EdK" secondAttribute="centerX" id="wDT-bM-ODd"/>
-                            <constraint firstItem="8d5-ec-A5u" firstAttribute="height" secondItem="AUr-3i-EdK" secondAttribute="height" id="wNN-uG-tEb"/>
                         </constraints>
                     </view>
                     <connections>
