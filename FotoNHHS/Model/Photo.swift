@@ -41,4 +41,7 @@ class Photo {
         return self.imageData
     }
     
+    func getPhotoID()->String{
+        return self.photoID
+    }
 }

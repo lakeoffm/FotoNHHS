@@ -200,5 +200,17 @@ class AlbumsTableViewController: UITableViewController {
             }
         }
     }
+    
+    //
+    // Transition to photos list
+    //
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowAlbumContents"{
+            if let indexPathRow = self.tableView.indexPathForSelectedRow{
+                let destinationController = segue.destinationViewController as! PhotosCollectionViewController
+                destinationController.album = self.albums[indexPathRow.row]
+            }
+        }
+    }
 
 }
