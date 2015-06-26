@@ -57,7 +57,7 @@
                                     <outlet property="albumInfo" destination="pw4-nl-0RB" id="LRV-Gh-GOa"/>
                                     <outlet property="albumTitle" destination="8L6-Vb-THj" id="gfW-6I-bSZ"/>
                                     <outlet property="thumbnailImage" destination="IVR-q3-pgC" id="in9-ta-rNz"/>
-                                    <segue destination="Q8b-zl-F38" kind="showDetail" id="V1y-vh-xPE"/>
+                                    <segue destination="Q8b-zl-F38" kind="showDetail" identifier="ShowAlbumContents" id="V1y-vh-xPE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

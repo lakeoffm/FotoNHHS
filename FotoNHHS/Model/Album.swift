@@ -16,6 +16,13 @@ class Album {
     private let dateCreated:String
     private let coverPhoto:Photo
     
+    init(){
+        self.albumID = ""
+        self.albumName = ""
+        self.numberOfPhotos = 0
+        self.dateCreated = ""
+        self.coverPhoto = Photo(id: "", size: Photo.Sizes.Medium, possibleSizes: [Photo.Sizes.Medium], data: NSData())
+    }
     
     init(id:String, name:String, photos:Int, dateCreated:String, cover:Photo){
         self.albumID = id
